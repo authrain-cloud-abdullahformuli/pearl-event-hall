@@ -1,9 +1,10 @@
 [build]
   base = "app"
-  publish = "dist/client"
-  command = "bun run build"
+    publish = "dist"
+      command = "npm run build"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+      [[redirects]]
+        from = "/*"
+          to = "/index.html"
+            status = 200
+            
