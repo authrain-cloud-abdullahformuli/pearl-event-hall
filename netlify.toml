@@ -1,10 +1,13 @@
 [build]
   base = "app"
-    publish = "dist"
-      command = "npm run build"
+  publish = "dist/client"
+  command = "npm install && node scripts/check-ui.mjs && npx tsr generate && npx tsc --noEmit && npx vite build"
 
-      [[redirects]]
-        from = "/*"
-          to = "/index.html"
-            status = 200
-            
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
